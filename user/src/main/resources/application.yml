@@ -1,0 +1,22 @@
+server:
+  port: 8082
+# 日志配置
+logging:
+  config: classpath:log4j2.xml
+
+dubbo:
+  application:
+    id: user_provider
+    name: user_provider
+  scan:
+    base-packages: com.duoyi.user.service.impl
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183
+  metadata-report:
+    address: zookeeper://127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183
+  protocol:
+    name: dubbo
+    port: 28080
+  config-center:
+    timeout: 30000

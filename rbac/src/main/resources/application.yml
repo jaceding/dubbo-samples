@@ -1,0 +1,17 @@
+logging:
+  config: classpath:log4j2.xml
+
+dubbo:
+  application:
+    id: rbac_provider
+    name: rbac_provider
+  scan:
+    base-packages: com.duoyi.rbac.service.impl
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183
+  metadata-report:
+    address: zookeeper://127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183
+  protocol:
+    name: dubbo
+    port: 28081
